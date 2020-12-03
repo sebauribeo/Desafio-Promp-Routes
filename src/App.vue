@@ -5,7 +5,7 @@
             <div
                 class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><router-link :to="{name: 'inicio'}">portada</router-link></li>
+                    <li class="nav-item" role="presentation"><router-link :to="{name: 'inicio'} ">portada</router-link></li>
                     <li class="nav-item" role="presentation"><router-link :to="{name: 'sobremi'}">sobre mí</router-link></li>
                     <li class="nav-item" role="presentation"><router-link :to="{name: 'contacto'}">contacto</router-link></li>
                     <li class="nav-item" role="presentation"><router-link to="/post/1">último post</router-link></li>
@@ -13,8 +13,9 @@
         </div>
         </div>
     </nav>
-    <router-view></router-view>
-  </div>
+    <transition name="slide-fade" mode="out-in">
+      <router-view/>
+    </transition>  </div>
   
 </template>
 
@@ -33,5 +34,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: rotateY(360deg);
+  opacity: 0;
 }
 </style>
