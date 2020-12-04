@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const lazy = () => import ('./components/lazyLoading.vue');
+const lazy = () => import ('./components/LazyLoading.vue');
 
 Vue.use(Router)
 
@@ -15,7 +15,7 @@ export default new Router({
                 {
                     path: '',
                     components: {
-                        lazyloading: lazy
+                        Lazyloading: lazy
                     },
                 },
             ]
@@ -29,7 +29,7 @@ export default new Router({
                 {
                     path: '',
                     components: {
-                        lazyloading: lazy
+                        Lazyloading: lazy
                     },
                 },
             ]
@@ -43,7 +43,7 @@ export default new Router({
                 {
                     path: '',
                     components: {
-                        lazyloading: lazy
+                        Lazyloading: lazy
                     },
                 },
             ]
@@ -60,7 +60,7 @@ export default new Router({
                         {
                             path: '',
                             components: {
-                                lazyloading: lazy
+                                Lazyloading: lazy
                             },
                         },
                     ]
